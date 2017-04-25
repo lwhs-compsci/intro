@@ -1,18 +1,21 @@
 # Welcome to Lake Washington High School Computer Science Club #
 
-## Introduction to tooling (Git, C++, CMake) ##
-
+This is largly an introduction to tooling and workflow.
 If you are looking for more explanations, the internet is your friend. You should expect to become quite good at finding answers via the internet, as there are many useful resources. Of course, the Telegram group chat is also an excellent way to get help.
 
 ## C++ ##
 
 + [cplusplus.com tutorial](http://www.cplusplus.com/doc/tutorial/)
 	
-	I _strongly_ recommend following this tutorial including its installation instructions if you don't have any idea what you are doing. It will walk you through installing Visual Studio (which you probably want to do if you use Windows) and provides a tutorial to get you familar with the basics of C++
+	I _strongly_ recommend following this tutorial including its installation instructions if you don't have any idea what you are doing. It will walk you through installing Visual Studio (which you probably want to do if you use Windows) and provides a tutorial to get you familar with the basics of C++. Notably their Visual Studio link is a bit old, go [here](https://www.visualstudio.com/)
 
 + [University of Washington C++ Resources from CS557](https://courses.cs.washington.edu/courses/cse557/15au/projects/c++resources.html)
 
 If you find some other tutorials that are helpful, create a pull request that adds them to this document
+
+#### Note on Installing Tools ####
+If you aren't running Windows, your best bet is to just talk to me over Telegram. I'm expecting that if you do something out of the norm, you know what you are doing
+If you want to get something set up on your school laptop (or don't want to install Studio), again, talk to me. You're going to be looking at [MSYS2](http://www.msys2.org/) or [Cygwin](http://cygwin.com/), both of which effectivly make your Windows machine look as much like Unix as possible. (The Windows Subsystem for Unix is another option but probably not on the school laptops)
 
 ### Introductory Project ###
 It is recommended that you start off by trying to implement this project, and then show us the result. We will and can help you out.
@@ -35,7 +38,7 @@ You can always look up std types on the internet, there is good documentation fo
 
 ___Git *is* *not* Github nor vis versa. Github is only one public hosting service and *does not* own Git___
 
-Git is a version control system designed for the Linux kernel. It provides a varity of useful things:
+[Git is a version control system](https://git-scm.com/) designed for the Linux kernel. It provides a varity of useful things:
 + The ability to see who changed what, when, and where
 + The ability to merge multiple people's changes into one source base
 
@@ -69,6 +72,9 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 Using GitHub has a few more additional steps, but they are for an additional document and also vary depending on how we want to develop our projects. It would be a good idea to sign up for GitHub if you haven't already, and message us your username so that we can add you to the LWHS Comp Sci Organization on GitHub
 
 ## CMake ##
+
+_You will need to install CMake aside from the other stuff you've installed_
+You can get CMake from [here](https://cmake.org/) 
 
 CMake is a tool that allows for the creation of build files for multiple platforms. This allows us to compile our code on many different platforms. It should stay pretty out of the way.
 + Run cmake from the shell, inside of a new directory like build/ (this is known as an out-of-source build, and makes sure your source directories stay clean and free of the intermediaries generated)
