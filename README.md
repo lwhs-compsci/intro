@@ -4,9 +4,37 @@
 
 If you are looking for more explanations, the internet is your friend. You should expect to become quite good at finding answers via the internet, as there are many useful resources.
 
+## C++ ##
+
++ [cplusplus.com tutorial](http://www.cplusplus.com/doc/tutorial/)
+	
+	I _strongly_ recommend following this tutorial including its installation instructions if you don't have any idea what you are doing. It will walk you through installing Visual Studio (which you probably want to do if you use Windows) and provides a tutorial to get you familar with the basics of C++
+
++ [University of Washington C++ Resources from CS557](https://courses.cs.washington.edu/courses/cse557/15au/projects/c++resources.html)
+
+If you find some other tutorials that are helpful, create a pull request that adds them to this document
+
+### Introductory Project ###
+It is recommended that you start off by trying to implement this project, and then show us the result. We will and can help you out.
+
+The Project: Create a reverse polish notation calculator. This is not too difficult and should only support basic arithmatic
+Read input lines off out of std input and write out the answer on a following line. Each number or operation should be seperated with a single space.
+Ex:
+```
+	1 2 +  <-- the input
+	3  <-- the answer
+	2 3 4 + *
+	14
+	2 3 + 4 *
+	20
+```
+As a hint: You may want to look into stacks, implemented for you in the <stack> std header
+You can always look up std types on the internet, there is good documentation for them
+
+
 ## Git ##
 
-____Git *is* *not* Github nor vis versa. Github is only one public hosting service and *does not* own Git___
+___Git *is* *not* Github nor vis versa. Github is only one public hosting service and *does not* own Git___
 
 Git is a version control system designed for the Linux kernel. It provides a varity of useful things:
 + The ability to see who changed what, when, and where
@@ -28,6 +56,7 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 	git commit -m '<include a useful message about this commit>'
 	```
 + You can run `git status` before commiting but after adding files to see the intermediate status
++ Try to not commit files that are unnecessary, esp temp files and your `build/` directory. The .gitignore file provides a filter that should catch most things, and if it doesn't please add those file types. This means that if you add an entire directory, git will still filter out stuff that matches in .gitignore
 + There is also a `git rm` command to remove files, notably with the option `--cached` to take a file out of a commit
 + You can push your changes to a remote repository with `git push` and pull new changes from the server into a existing repository with `git pull`
 
@@ -41,26 +70,18 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 ## CMake ##
 
 CMake is a tool that allows for the creation of build files for multiple platforms. This allows us to compile our code on many different platforms. It should stay pretty out of the way.
-
-+ Run cmake from the shell, inside of a new directory like build/
++ Run cmake from the shell, inside of a new directory like build/ (this is known as an out-of-source build, and makes sure your source directories stay clean and free of the intermediaries generated)
 
 	```
 	# The first time you clone the repo
 	mkdir build/
 	cd build/
 	cmake ..
+	# open whatever build files you end up with 
 	```
+	For instance, if you are using Visual Studio, running CMake will result in a solution file that you can open inside `build/` and then use like a normal Visual Studio solution. If you're on Linux and using Make, it will generate a makefile and you can then just run `make` in `build/` 
 
-
-## C++ ##
-
-+ [cplusplus.com tutorial](http://www.cplusplus.com/doc/tutorial/)
-	
-	I _strongly_ recommend following this tutorial including its installation instructions if you don't have any idea what you are doing
-
-+ [University of Washington C++ Resources from CS557](https://courses.cs.washington.edu/courses/cse557/15au/projects/c++resources.html)
-
-If you find some other tutorials that are helpful, create a pull request that adds them to this document
++ If you change the project in some way like adding or removing files or change the CMakeLists.txt file, you need to rerun CMake. Some tools like VS and make will do this for you sometimes, but you can't always rely on it. You just need to run `cmake` from your `build/` directory like the first time, and CMake will update the build files found within.
 
 ### A more detailed explanation of the actual compilation process ###
 
@@ -68,3 +89,4 @@ C++ is a compiled language. This means that a program called the compiler transf
 
 Due to the somewhat old nature of C++, there is one more twist to how your source code files become an executable. Some code, notably definitions, are sometimes placed in files called headers (.h) which can then be included into multiple source files. This allows you to share the definitions between multiple source files. These files are spliced together via the preprocessor, which runs before the source code is actually compiled. To include a file, you use the `#include` preprocessor command. There are a varity of useful standard headers avaliable as well as the headers for the project that are also in the include path.
 
+CMake takes care of making sure all of this stuff happens and so we don't have to worry about it.
