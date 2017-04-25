@@ -2,7 +2,7 @@
 
 ## Introduction to tooling (Git, C++, CMake) ##
 
-If you are looking for more explanations, the internet is your friend. You should expect to become quite good at finding answers via the internet, as there are many useful resources.
+If you are looking for more explanations, the internet is your friend. You should expect to become quite good at finding answers via the internet, as there are many useful resources. Of course, the Telegram group chat is also an excellent way to get help.
 
 ## C++ ##
 
@@ -31,7 +31,6 @@ Ex:
 As a hint: You may want to look into stacks, implemented for you in the <stack> std header
 You can always look up std types on the internet, there is good documentation for them
 
-
 ## Git ##
 
 ___Git *is* *not* Github nor vis versa. Github is only one public hosting service and *does not* own Git___
@@ -40,7 +39,7 @@ Git is a version control system designed for the Linux kernel. It provides a var
 + The ability to see who changed what, when, and where
 + The ability to merge multiple people's changes into one source base
 
-Using git is not terribly difficult if you ignore the insides. Visual Studio provides a GUI interface that is pretty easy to use. Basic operation is as follows for commands run at the shell:
+Using git is not terribly difficult if you ignore the insides. Visual Studio provides a GUI interface that is pretty easy to use and you may want to just stick with that. Basic operation is as follows for commands run at the shell:
 
 + To 'clone' or download a repository at a remote location
 
@@ -66,6 +65,8 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 	
 	+ [The Offical Git Tutorial](https://git-scm.com/docs/gittutorial)
 	+ [Github's Tutorial - Interactive Walkthrough](https://try.github.io/levels/1/challenges/1)
+
+Using GitHub has a few more additional steps, but they are for an additional document and also vary depending on how we want to develop our projects. It would be a good idea to sign up for GitHub if you haven't already, and message us your username so that we can add you to the LWHS Comp Sci Organization on GitHub
 
 ## CMake ##
 
