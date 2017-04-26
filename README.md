@@ -11,18 +11,18 @@ If you are looking for more explanations, the internet is your friend. You shoul
 
 + [University of Washington C++ Resources from CS557](https://courses.cs.washington.edu/courses/cse557/15au/projects/c++resources.html)
 
-If you find some other tutorials that are helpful, create a pull request that adds them to this document
++ [The C++ club standards](CXXSTD.md)
 
-#### Note on Installing Tools ####
-If you aren't running Windows, your best bet is to just talk to me over Telegram. I'm expecting that if you do something out of the norm, you know what you are doing
-If you want to get something set up on your school laptop (or don't want to install Studio), again, talk to me. You're going to be looking at [MSYS2](http://www.msys2.org/) or [Cygwin](http://cygwin.com/), both of which effectivly make your Windows machine look as much like Unix as possible. (The Windows Subsystem for Unix is another option but probably not on the school laptops)
+	I would hope that these get followed to an extent
+
+If you find some other tutorials that are helpful, create a pull request that adds them to this document
 
 ### Introductory Project ###
 It is recommended that you start off by trying to implement this project, and then show us the result. We will and can help you out.
 
-The Project: Create a reverse polish notation calculator. This is not too difficult and should only support basic arithmatic
+*The Project:* Create a reverse polish notation calculator. This is not too difficult and should only support basic arithmetic
 Read input lines off out of std input and write out the answer on a following line. Each number or operation should be seperated with a single space.
-Ex:
+Example Input/Output:
 ```
 	1 2 +  <-- the input
 	3  <-- the answer
@@ -34,9 +34,13 @@ Ex:
 As a hint: You may want to look into stacks, implemented for you in the <stack> std header
 You can always look up std types on the internet, there is good documentation for them
 
+#### Note on Installing Tools ####
+If you aren't running Windows, your best bet is to just talk to me over Telegram. I'm expecting that if you do something out of the norm, you know what you are doing
+If you want to get something set up on your school laptop (or don't want to install Studio), again, talk to me. You're going to be looking at [MSYS2](http://www.msys2.org/) or [Cygwin](http://cygwin.com/), both of which effectivly make your Windows machine look as much like Unix as possible. (The Windows Subsystem for Unix is another option but probably not on the school laptops)
+
 ## Git ##
 
-___Git *is* *not* Github nor vis versa. Github is only one public hosting service and *does not* own Git___
+___Git *is* *not* Github. Github is only one public hosting service and *does not* own Git___
 
 [Git is a version control system](https://git-scm.com/) designed for the Linux kernel. It provides a varity of useful things:
 + The ability to see who changed what, when, and where
@@ -53,9 +57,9 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 + Once you have completed part or all of what you had set out to do or want to upload your changes, add the files you wish to commit and  commit your changes:
 
 	```
-	git add <a file that you want to commit that is changed>
-	<more git add commands to add the rest of the files. you can add entire directories with their pathes as well>
-	git commit -m '<include a useful message about this commit>'
+git add <a file that you want to commit that is changed>
+<more git add commands to add the rest of the files. you can add entire directories with their pathes as well>
+git commit -m '<include a useful message about this commit>'
 	```
 + You can run `git status` before commiting but after adding files to see the intermediate status
 + Try to not commit files that are unnecessary, esp temp files and your `build/` directory. The .gitignore file provides a filter that should catch most things, and if it doesn't please add those file types. This means that if you add an entire directory, git will still filter out stuff that matches in .gitignore
@@ -69,7 +73,7 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 	+ [The Offical Git Tutorial](https://git-scm.com/docs/gittutorial)
 	+ [Github's Tutorial - Interactive Walkthrough](https://try.github.io/levels/1/challenges/1)
 
-Using GitHub has a few more additional steps, but they are for an additional document and also vary depending on how we want to develop our projects. It would be a good idea to sign up for GitHub if you haven't already, and message us your username so that we can add you to the LWHS Comp Sci Organization on GitHub
+Using GitHub has a few more additional steps, but they are for an additional document and also vary depending on how we want to develop our projects. It would be a good idea to sign up for GitHub if you haven't already, and message us your username so that we can add you to the LWHS Comp Sci Organization on GitHub. See the [Contribution](CONTRIB.md) for information on how exactly this process would work.
 
 ## CMake ##
 
@@ -90,7 +94,7 @@ CMake is a tool that allows for the creation of build files for multiple platfor
 
 + If you change the project in some way like adding or removing files or change the CMakeLists.txt file, you need to rerun CMake. Some tools like VS and make will do this for you sometimes, but you can't always rely on it. You just need to run `cmake` from your `build/` directory like the first time, and CMake will update the build files found within.
 
-### A more detailed explanation of the actual compilation process ###
+#### A more detailed explanation of the actual compilation process ####
 
 C++ is a compiled language. This means that a program called the compiler transforms your source code into a final executable containing machine code that can be run many times. The basic process is that the compiler takes your source code files (files ending in .cpp usually) and compiles them into something called an object files (.o or .obj). Object files are a intermediary and basically contain the actual machine code for that source file. Another program called the linker then takes these object files and links them together into the final executable (on Windows: .exe). This steps are of course automated (truly one virtue of programmers is their lazyness) using the tools introduced in intro/setup.md and friends. They are, of course, somewhat system dependent.
 
