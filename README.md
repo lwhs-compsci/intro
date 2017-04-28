@@ -57,9 +57,9 @@ Using git is not terribly difficult if you ignore the insides. Visual Studio pro
 + Once you have completed part or all of what you had set out to do or want to upload your changes, add the files you wish to commit and  commit your changes:
 
 	```
-git add <a file that you want to commit that is changed>
-<more git add commands to add the rest of the files. you can add entire directories with their pathes as well>
-git commit -m '<include a useful message about this commit>'
+	git add <a file that you want to commit that is changed>
+	<more git add commands to add the rest of the files. you can add entire directories with their pathes as well>
+	git commit -m '<include a useful message about this commit>'
 	```
 + You can run `git status` before commiting but after adding files to see the intermediate status
 + Try to not commit files that are unnecessary, esp temp files and your `build/` directory. The .gitignore file provides a filter that should catch most things, and if it doesn't please add those file types. This means that if you add an entire directory, git will still filter out stuff that matches in .gitignore
